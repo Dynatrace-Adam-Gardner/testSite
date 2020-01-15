@@ -30,7 +30,7 @@ document.getElementById('votebtn').onclick = function(){
         alert(http.responseText);
     }
   }
-  http.send(JSON.stringify({ "pageURL": "/postman8" }));
+  http.send(JSON.stringify({ "pageURL": window.location.pathname }));
 }  
 </script>
 </body>
