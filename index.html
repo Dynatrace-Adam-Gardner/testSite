@@ -40,12 +40,14 @@ document.getElementById('votebtn').onclick = function(){
   //Send the proper header information along with the request
   http.setRequestHeader('Content-Type', 'application/json');
 
+  // When vote has been registered
   http.onreadystatechange = function() {
     if(http.readyState == 4 && http.status == 200) {
+	// Show the confirmation text
     	document.getElementById('vote-confirmed').style.display = 'revert';
-        alert(http.responseText);
     }
   }
+  // Send the current page path to AWS
   http.send(JSON.stringify({ "pageURL": window.location.pathname }));
 }  
 </script>
