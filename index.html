@@ -13,9 +13,10 @@
 <p>Testing...</p>
 <img id="votebtn" role="button" src="thumb-up.png" /></a>
 <br /><br />
-Location: <script>echo window.location.href</script>
-  
+<p id="holder"></p>
 <script>
+document.getElementById('holder').innerHTML = window.location.href;
+
 document.getElementById('votebtn').onclick = function(){
   var http = new XMLHttpRequest();
   var url = 'https://kc76vgkmva.execute-api.ap-southeast-2.amazonaws.com/default/testVotes';
