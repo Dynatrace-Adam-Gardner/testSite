@@ -14,14 +14,21 @@
   cursor: pointer;
   background: #F5F5F5;
 }
+#vote-confirmed {
+	display: none;
+	background: limegreen;
+	border: 1px solid darkgreen;
+	padding: 1%;
+}
 </style>
 </head>
 <body>
 <div id="youtube-cta">
 	<h2>YouTube Tutorial?</h2>
-	<p>Would you prefer this post as a live walkthrough on YouTube?</p>
+	<p>Would you prefer this post as a live walkthrough on Youtube?</p>
 	<p>Let me know by giving a thumbs-up (no login / account required).</p>
 	<img id="votebtn" src="thumb-up.png" />
+	<p id="vote-confirmed">Thanks. Your vote has been recorded.</p>
 </div>
 
 <script>
@@ -35,6 +42,7 @@ document.getElementById('votebtn').onclick = function(){
 
   http.onreadystatechange = function() {
     if(http.readyState == 4 && http.status == 200) {
+    	document.getElementById('vote-confirmed').style.display = 'revert';
         alert(http.responseText);
     }
   }
