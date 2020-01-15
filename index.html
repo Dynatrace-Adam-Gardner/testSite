@@ -1,21 +1,30 @@
 <!doctype html>
 <html>
 <head>
-<title>Test Site</title>
+<title>Demo</title>
 <style>
+#youtube-cta {
+  width: 30%;
+  padding: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+}
 #votebtn:hover {
   cursor: pointer;
+  background: #F5F5F5;
 }
 </style>
 </head>
 <body>
-<h1>Test Site...</h1>
-<p>Testing...</p>
-<img id="votebtn" role="button" src="thumb-up.png" /></a>
-<br /><br />
-<p>v1</p>
-<script>
+<div id="youtube-cta">
+	<h2>YouTube Tutorial?</h2>
+	<p>Would you prefer this article as a live walkthrough on Youtube?</p>
+	<p>Let me know by giving a thumbs-up (no login / account required).</p>
+	<img id="votebtn" src="thumb-up.png" />
+</div>
 
+<script>
 document.getElementById('votebtn').onclick = function(){
   var http = new XMLHttpRequest();
   var url = 'https://kc76vgkmva.execute-api.ap-southeast-2.amazonaws.com/default/testVotes';
